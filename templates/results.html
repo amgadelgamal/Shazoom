@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/results.css') }}">
+</head>
+<body>
+<div class="text-center">
+  			<h1 class="company_name">SHAZOOM</h1>
+</div>
+<ul class="tilesWrap">
+  {% for item in data %}
+	<li>
+		<h2>0{{item.num}}</h2>
+		<h3>{{item.name}}</h3>
+		<p>
+			By {{item.artist}}
+		</p>
+		<a href={{item.yt_url}} target="_blank" rel="noopener noreferrer">
+			<button>See on youtube</button>
+		</a>
+		<br>
+		<br>
+		<img src={{item.img}} alt="Cover Image" width="120" height="120">
+        </li>
+  {% endfor %}
+</ul>
+<br>
+<form action = "#" method="POST">
+          <div class="text-center">
+  			<button class="btn btn-1" type="submit">New Search</button>
+		</div>
+</form>
+</body>
+</html>
